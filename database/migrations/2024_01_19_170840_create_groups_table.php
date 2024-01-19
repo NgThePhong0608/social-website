@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('thumbnail_path', 1024)->nullable();
             $table->boolean('auto_approval')->default(false);
             $table->text('about')->nullable();
-            $table->foreingId('user_id')->constained('users');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamp('deleted_at')->nullable();
-            $table->foreingId('deleted_by')->nullable()->constained('users');
+            $table->timestamp('deleted_by')->nullable();
             $table->timestamps();
         });
     }
